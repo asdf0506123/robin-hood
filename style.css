@@ -85,6 +85,7 @@ body.saga-active .hero-bg-merger { display: none; }
 .silver-divider { width: 100px; height: 1px; margin: 1rem auto; background: linear-gradient(90deg, transparent, var(--c-silver), transparent); box-shadow: 0 0 10px var(--c-silver-glow); }
 .gold-divider { width: 100px; height: 1px; margin: 1rem auto; background: linear-gradient(90deg, transparent, var(--c-gold), transparent); box-shadow: 0 0 10px var(--c-gold-glow); }
 .emerald-divider { width: 100px; height: 1px; margin: 1rem auto; background: linear-gradient(90deg, transparent, var(--c-emerald), transparent); box-shadow: 0 0 10px rgba(2, 32, 19, 0.8); }
+.amethyst-divider { width: 100px; height: 1px; margin: 1rem auto; background: linear-gradient(90deg, transparent, #9b59b6, transparent); box-shadow: 0 0 10px rgba(155, 89, 182, 0.8); }
 
 /* Buttons */
 .cine-btn {
@@ -154,6 +155,57 @@ body.saga-active .hero-bg-merger { display: none; }
 .card-desc { font-size: 0.9rem; color: #889; margin-bottom: 1.5rem; flex-grow: 1; }
 .card-meta { font-size: 0.8rem; color: var(--c-gold); font-family: var(--f-heading); margin-bottom: 0.5rem; }
 
+/* Glossary Cards */
+.glossary-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; justify-content: center; }
+.glossary-card { 
+    background: rgba(11, 19, 32, 0.5); 
+    border: 1px solid rgba(255,255,255,0.05); 
+    border-radius: var(--s-radius); 
+    padding: 2rem; 
+    position: relative; 
+    transition: 0.4s; 
+    display: flex; 
+    flex-direction: column; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.6); 
+}
+.glossary-card::before { 
+    content: ''; 
+    position: absolute; 
+    top: 0; left: 0; 
+    width: 4px; height: 100%; 
+    background: rgba(255,255,255,0.1); 
+    transition: 0.4s; 
+}
+.glossary-card:hover { 
+    transform: translateY(-8px); 
+    border-color: rgba(155, 89, 182, 0.4); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.9), 0 0 15px rgba(155, 89, 182, 0.3); 
+}
+.glossary-card:hover::before { 
+    background: #9b59b6; 
+    box-shadow: 0 0 10px rgba(155, 89, 182, 0.8); 
+}
+.glossary-term { 
+    font-family: var(--f-heading); 
+    font-size: 1.5rem; 
+    color: var(--c-silver); 
+    margin-bottom: 1rem; 
+    transition: 0.4s; 
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 0.5rem;
+}
+.glossary-card:hover .glossary-term { 
+    color: #9b59b6; 
+    text-shadow: 0 0 10px rgba(155, 89, 182, 0.4); 
+    border-color: rgba(155, 89, 182, 0.3); 
+}
+.glossary-definition { 
+    font-size: 1.05rem; 
+    color: #a1aab3; 
+    line-height: 1.6; 
+    font-style: italic; 
+}
+
 /* Controls */
 .lang-selector { width: 100%; padding: 0.6rem; background: rgba(0,0,0,0.5); border: 1px solid rgba(169,181,194,0.3); color: #fff; font-family: var(--f-body); margin-bottom: 0.8rem; border-radius: 4px; outline: none; cursor: pointer; transition: 0.3s; }
 .lang-selector:focus { border-color: var(--c-gold); box-shadow: 0 0 8px var(--c-gold-glow); }
@@ -211,6 +263,7 @@ body.saga-active .hero-bg-merger { display: none; }
         max-height: 280px;
         overflow: hidden;
     }
+    .glossary-grid { grid-template-columns: 1fr; }
     .glowing-title { font-size: 3rem; } .title-sub { font-size: 1.8rem; } .saga-title { font-size: 2.5rem; }
     .reading-content { padding: 2rem 1.5rem; font-size: 1rem; }
 }

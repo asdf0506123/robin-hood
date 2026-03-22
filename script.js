@@ -21,6 +21,12 @@ const sagasData = [
             { name: "Harry Potter", role: "El Niño que Vivió", desc: "Un valiente mago de Gryffindor." },
             { name: "Hermione Granger", role: "La Bruja Más Brillante", desc: "Táctica brillante y amiga leal." },
             { name: "Ron Weasley", role: "El Mejor Amigo Leal", desc: "Compañero firme." }
+        ],
+        glossary: [
+            { term: "Muggle", definition: "Persona nacida sin habilidades mágicas y de padres no magos." },
+            { term: "Horrocrux", definition: "Objeto muy poderoso y oscuro en el que un mago oculta un fragmento de su alma para alcanzar la inmortalidad." },
+            { term: "Quidditch", definition: "El deporte más popular en el mundo mágico, jugado sobre escobas voladoras." },
+            { term: "Auror", definition: "Un mago o bruja altamente entrenado cuya misión es investigar crímenes relacionados con las Artes Oscuras." }
         ]
     },
     {
@@ -38,6 +44,12 @@ const sagasData = [
             { name: "Frodo Bolsón", role: "Portador del Anillo", desc: "Un humilde hobbit cargado de un poder inigualable." },
             { name: "Aragorn", role: "Montaraz del Norte", desc: "El verdadero rey regresando a reclamar su trono." },
             { name: "Gandalf", role: "El Jinete Blanco", desc: "Un mago Istari antiguo y sabio." }
+        ],
+        glossary: [
+            { term: "Mithril", definition: "Un metal asombrosamente ligero y más duro que el acero, extraído por los enanos en las profundidades de Moria." },
+            { term: "Istari", definition: "Los Magos de la Tierra Media, espíritus Maiar enviados en forma humana para ayudar a los pueblos libres." },
+            { term: "Palantír", definition: "Piedras videntes esféricas que permiten a los usuarios comunicarse mentalmente y ver eventos a grandes distancias." },
+            { term: "Nazgûl", definition: "Los Espectros del Anillo, originalmente nueve reyes de los hombres corrompidos y esclavizados por los Anillos de Poder." }
         ]
     },
     {
@@ -55,6 +67,12 @@ const sagasData = [
             { name: "Luke Skywalker", role: "Maestro Jedi", desc: "La nueva esperanza de la galaxia." },
             { name: "Darth Vader", role: "Lord Sith", desc: "Una figura trágica convertida a la oscuridad." },
             { name: "Leia Organa", role: "General / Princesa", desc: "Una feroz líder de la rebelión." }
+        ],
+        glossary: [
+            { term: "Sith", definition: "Una antigua orden de usuarios de la Fuerza impulsados por la pasión y dedicados al lado oscuro." },
+            { term: "Jedi", definition: "Guardianes de la paz y la justicia en la República Galáctica, usuarios del lado luminoso de la Fuerza." },
+            { term: "Holocrón", definition: "Artefactos antiguos capaces de almacenar enormes cantidades de datos e información, utilizados por Jedi y Sith." },
+            { term: "Padawan", definition: "Un aprendiz Jedi en entrenamiento bajo la tutela directa de un Caballero o Maestro Jedi." }
         ]
     },
     {
@@ -72,6 +90,12 @@ const sagasData = [
             { name: "Katniss Everdeen", role: "El Sinsajo", desc: "La reacia cara de una revolución." },
             { name: "Peeta Mellark", role: "Tributo / Panadero", desc: "Un aliado carismático y estratégico." },
             { name: "Haymitch Abernathy", role: "Mentor", desc: "Un sobreviviente cínico pero brillante." }
+        ],
+        glossary: [
+            { term: "Sinsajo", definition: "Un pájaro mutante que puede imitar sonidos humanos; se convirtió en el símbolo de la rebelión contra el Capitolio." },
+            { term: "La Cosecha", definition: "El día anual donde se eligen al azar a los tributos (un chico y una chica por distrito) para los Juegos del Hambre." },
+            { term: "Agentes de la Paz", definition: "La fuerza militar y policial estrictamente controlada por el Capitolio para mantener el orden en los distritos." },
+            { term: "Cornucopia", definition: "Una estructura dorada gigante ubicada en el centro de la arena que alberga armas, comida y suministros." }
         ]
     },
     {
@@ -91,6 +115,12 @@ const sagasData = [
             { name: "Bella Swan", role: "Protagonista", desc: "Una humana atraída a un mundo paranormal mortal." },
             { name: "Edward Cullen", role: "Vampiro telépata", desc: "Un vampiro centenario que lucha con su naturaleza pacífica." },
             { name: "Jacob Black", role: "Hombre lobo", desc: "Amigo leal y protector de la tribu Quileute." }
+        ],
+        glossary: [
+            { term: "Imprimación", definition: "Un fenómeno involuntario entre los cambiaformas Quileute donde se emparejan espiritualmente con su alma gemela de por vida." },
+            { term: "Vulturis", definition: "El clan de vampiros más antiguo, grande y poderoso, considerado como la realeza y la ley del mundo vampírico." },
+            { term: "Don", definition: "Habilidades especiales o talentos únicos que algunos vampiros retienen de su vida humana, como la telepatía o las premoniciones." },
+            { term: "Hijos de la Luna", definition: "Hombres lobo verdaderos que se transforman solo con la luna llena, diferentes a los cambiaformas Quileutes." }
         ]
     }
 ];
@@ -191,6 +221,21 @@ function loadSagaEnvironment(sagaId) {
             </div>
         </div>
     `).join('');
+
+    // Inject Glossary
+    const sagaGlossaryContainer = document.getElementById('saga-glossary-container');
+    const sagaGlossarySection = document.getElementById('saga-glossary');
+    if (data.glossary && data.glossary.length > 0) {
+        sagaGlossarySection.style.display = 'block';
+        sagaGlossaryContainer.innerHTML = data.glossary.map(item => `
+            <div class="glossary-card">
+                <h4 class="glossary-term">${item.term}</h4>
+                <p class="glossary-definition">${item.definition}</p>
+            </div>
+        `).join('');
+    } else {
+        sagaGlossarySection.style.display = 'none';
+    }
 
 }
 
