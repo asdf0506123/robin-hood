@@ -201,6 +201,16 @@ body.saga-active .hero-bg-merger { display: none; }
 }
 @media (max-width: 600px) {
     .content-grid { grid-template-columns: 1fr; }
+    .sagas-grid {
+        grid-template-columns: minmax(250px, 400px);
+        justify-content: center;
+        padding: 1.5rem 1rem;
+        gap: 2rem;
+    }
+    .ad-wrapper {
+        max-height: 280px;
+        overflow: hidden;
+    }
     .glowing-title { font-size: 3rem; } .title-sub { font-size: 1.8rem; } .saga-title { font-size: 2.5rem; }
     .reading-content { padding: 2rem 1.5rem; font-size: 1rem; }
 }
