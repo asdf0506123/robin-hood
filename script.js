@@ -35,6 +35,7 @@ const sagasData = [
         shortDesc: 'Una comunidad viaja a través de la Tierra Media para destruir un antiguo anillo maligno.',
         desc: 'Adéntrate en la vasta épica de la Tierra Media. Una historia de hobbits, elfos, hombres y enanos unidos en una desesperada misión para destruir el Anillo Único y derrotar a Sauron.',
         bgImage: 'img/el_senor_de_los_anillos.avif',
+        driveLink: '#',
         books: [
             { title: "La Comunidad del Anillo", desc: "El viaje comienza en la Comarca.", coverClass: 'cover-lotr-1' },
             { title: "Las Dos Torres", desc: "La comunidad se rompe.", coverClass: 'cover-lotr-2' },
@@ -58,6 +59,7 @@ const sagasData = [
         shortDesc: 'Una épica ópera espacial que detalla la lucha galáctica entre la luz y la oscuridad.',
         desc: 'Viaja a una galaxia muy, muy lejana. Experimenta la batalla atemporal entre los Sith y los Jedi, explorando la Fuerza mística y el destino de la familia Skywalker.',
         bgImage: 'img/star_wars.jpeg',
+        driveLink: '#',
         books: [
             { title: "Heredero del Imperio", desc: "Un extenso relato del universo expandido.", coverClass: 'cover-sw-1' },
             { title: "El Resurgir de la Fuerza Oscura", desc: "El lado oscuro resurge.", coverClass: 'cover-sw-2' },
@@ -81,6 +83,7 @@ const sagasData = [
         shortDesc: 'Una rebelión distópica provocada por un mortal torneo televisado.',
         desc: 'Bienvenidos a Panem. Sigue la emocionante y distópica historia de Katniss Everdeen mientras navega por brutales juegos políticos y se convierte en el símbolo de una rebelión a nivel nacional.',
         bgImage: 'img/los_juegos_del_hambre.png',
+        driveLink: 'https://drive.google.com/drive/folders/1lOrc8mVYyhVrynZ5aVv2uz2SxTDgIM_f?usp=drive_link',
         books: [
             { title: "Los Juegos del Hambre", desc: "Los 74º juegos anuales comienzan.", coverClass: 'cover-hg-1' },
             { title: "En Llamas", desc: "La chispa se enciende.", coverClass: 'cover-hg-2' },
